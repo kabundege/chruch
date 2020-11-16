@@ -1,0 +1,94 @@
+.auth{
+    form{
+        width:30%;
+        background: #555;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        flex-flow:column;
+        align-items: center;
+        border-radius:10px;
+        color:#333;
+
+        .tel{
+            background:#555;
+            padding-left:5px;
+            margin: 2% 0;
+            .PhoneInputInput{
+                border:none;
+                outline:none;
+                padding: 5px 10px;
+            }
+        }
+
+        h1{
+            font-family: 'Great Vibes', cursive;
+            font-weight:lighter;
+            margin:10px 0;
+            i{ 
+                font-size:50px; 
+                color:whitesmoke;
+                text-shadow: 0px -1px 5px lightgrey; 
+            }
+          }
+
+        .parent{
+            background:#999;
+            display:grid;
+            justify-items: center;
+            padding:10px 0;
+            width:100%;
+            button{
+                outline: none;
+                border:none;
+                border-radius:3px;
+                padding:5px 15px;
+                background: whitesmoke;
+            }
+        }
+
+        .input-field{
+            background: rgba(245, 245, 245, 0.5);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin:2% 0;
+            padding:5px;
+            border-radius: 5px;
+            i{ 
+                flex:0.2;
+                margin: 0 3px;
+            }
+            input{ 
+                flex:0.8;
+                background: transparent;
+                // height:100%;
+                border:none;
+                outline:none;
+                padding-left:10px; 
+                color:#333;
+            }
+            select{
+                background: transparent;
+                border:none;
+                outline:none;
+                margin-left:3%;
+            }
+        }
+
+        .inputer{
+            width:61%;
+            padding:5px 0;
+            div{
+                    &:first-child{
+                        float:left
+                    }
+                    &:last-child{
+                        float: right;
+                    }
+            }
+        }
+    }
+}
