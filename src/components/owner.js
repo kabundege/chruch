@@ -11,12 +11,19 @@ class Owner extends Component{
         const { name,value } = e.target;
         this.setState({ [name]:value });
     }
-    // chidVariants = {
-    //     initial:{
-    //         y:"-100vw"
-    //     },
-
-    // }
+    nextVariants = {
+        hidden: { 
+          x: '-100vw' 
+        },
+        visible: {
+          x: 0,
+          transition: { type: 'spring', stiffness: 120 }
+        },
+        exit: {
+          x: "-100vh",
+          transition: { ease: 'easeInOut' }
+        }
+    }      
     render(){
         const { owner,amazina } = this.state;
         return(
@@ -50,7 +57,13 @@ class Owner extends Component{
                         { owner === "umwana" && 
                             <>
                             <hr style={{backgroundImage:"white",color:"white",fontWeight:"bold",width:"80%"}}/>
-                            <motion.div className="input-field">
+                            <motion.div 
+                                variants={this.nextVariants} 
+                                initial="hidden"
+                                animate="visible"
+                                exit="exit"
+                                className="input-field"
+                            >
                                 <span>👤</span>
                                 <input 
                                     type="text" 
@@ -62,7 +75,7 @@ class Owner extends Component{
                             </>
                         }
                         <button onClick={()=> this.props.history.push('/subscribe')}>
-                            <i className="fas fa-sign-in-alt"></i>
+                            Komeza <i className="fas fa-sign-in-alt"></i>
                         </button>
                     </div>
                 </form>

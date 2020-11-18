@@ -33,7 +33,7 @@ class Parrish extends Component{
                             </select>
                         </div>
                         <button onClick={()=> this.props.history.push('/owner')}>
-                            <i className="fas fa-sign-in-alt"></i>
+                            Komeza <i className="fas fa-sign-in-alt"></i>
                         </button>
                     </div>
                 </form>

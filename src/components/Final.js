@@ -22,6 +22,9 @@ class Parrish extends Component{
                         <i className="fas fa-church"></i>
                     </h1>
                     <div className="parent">
+                    <button onClick={()=> this.props.history.push('/')}>
+                            Ahabanza <i className="fas fa-sign-in-alt"></i>
+                        </button>
                         <div className="input-field">
                             <span>👤</span>
                             <span style={{margin:"0px 5px"}}>{amazina}</span>
@@ -41,9 +44,7 @@ class Parrish extends Component{
                                 <span style={{marginLeft:"5px"}}>iteraniro {iteraniro}</span>
                             </div>
                         </div>
-                        <button onClick={()=> this.props.history.push('/')}>
-                            Ahabanza ↩
-                        </button>
+                        <i style={{fontSize:"40px",marginTop:"0%",color:"green"}} className="far fa-check-circle"></i> 
                     </div>
                 </form>
             </div>

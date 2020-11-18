@@ -10,10 +10,10 @@ const NotFound = (props) =>
                     <i className="fas fa-church"></i>
                 </h1>
                 <div className="parent">
-                    <h1>Take Me Home</h1>
-                    <img src="https://img.icons8.com/bubbles/100/000000/telescope.png" alt="telescope"/>
+                    <h1>Take Me Home </h1>
+                    <p style={{fontSize:"50px"}}>⛪</p>
                     <button onClick={()=> props.history.push('/')}>
-                        <i className="fas fa-sign-in-alt"></i>
+                        Ahabanza <i className="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
             </form>

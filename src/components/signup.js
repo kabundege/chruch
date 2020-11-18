@@ -40,7 +40,7 @@ class SignUp extends Component{
                                 onChange={this.handlerchange}/>
                         </div>
                         <button onClick={()=> this.props.history.push('/parrish')}>
-                            <i className="fas fa-sign-in-alt"></i>
+                            Komeza <i className="fas fa-sign-in-alt"></i>
                         </button>
                     </div>
                 </form>

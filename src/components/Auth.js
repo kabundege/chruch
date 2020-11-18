@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
 import '../scss/components/auth.scss';
+import React, { useState } from 'react';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 
 const Auth = (props) => {
-    const [ greeting,SetGreeting ] = useState('Muraho')
     const [ phone, setPhone ] = useState('')
 
     return(
@@ -15,7 +14,7 @@ const Auth = (props) => {
                     <i className="fas fa-church"></i>
                 </h1>
                 <div className="parent">
-                    <h1>{greeting} 👋</h1>
+                    <h1>Muraho 👋</h1>
                     <div className="tel">
                         <PhoneInput
                             placeholder="78 3456 789"
@@ -25,7 +24,7 @@ const Auth = (props) => {
                             />
                     </div>
                     <button onClick={()=> props.history.push('/signup')}>
-                        <i className="fas fa-sign-in-alt"></i>
+                        komeza <i className="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
             </form>
