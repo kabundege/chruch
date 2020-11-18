@@ -40,7 +40,6 @@ class SignUp extends Component{
                                 onChange={this.handlerchange}/>
                         </div>
                         <button 
-                            disabled={ amazina === "" || itorero_ryibanze === "" ? true : false }
                             onClick={()=> this.props.history.push('/parrish')}>
                             Komeza <i className="fas fa-sign-in-alt"></i>
                         </button>

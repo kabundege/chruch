@@ -24,7 +24,6 @@ const Auth = (props) => {
                             />
                     </div>
                     <button 
-                        disabled={ phone==="" ? true : false}
                         onClick={()=> props.history.push('/signup')}>
                         komeza <i className="fas fa-sign-in-alt"></i>
                     </button>

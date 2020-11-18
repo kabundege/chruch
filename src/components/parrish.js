@@ -33,7 +33,6 @@ class Parrish extends Component{
                             </select>
                         </div>
                         <button 
-                            disabled={ paruwase === "" ? true : false }
                             onClick={()=> this.props.history.push('/owner')}>
                             Komeza <i className="fas fa-sign-in-alt"></i>
                         </button>

@@ -30,7 +30,6 @@ class Parrish extends Component{
                         </div>
                         <br/>
                         <button    
-                            disabled={ service === "" ? true : false }
                             onClick={()=> this.props.history.push('/final')}>
                             Emeza 👍
                         </button>
