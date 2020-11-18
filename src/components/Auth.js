@@ -1,22 +1,20 @@
-import React, { useState } from 'react';
-import Bible from '../assets/bible.jpg'
 import '../scss/components/auth.scss';
+import React, { useState } from 'react';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 
-const Auth = () => {
-    const [ greeting,SetGreeting ] = useState('Welcome')
+const Auth = (props) => {
     const [ phone, setPhone ] = useState('')
 
     return(
         <div className="auth">
-            <section></section>
-            <form>
-                <h1>
+            <section className="bg"></section>
+            <form onSubmit={(e=>e.preventDefault())}>
+                <h1 className="header">
                     <i className="fas fa-church"></i>
                 </h1>
                 <div className="parent">
-                    <h1>{greeting}</h1>
+                    <h1>Muraho 👋</h1>
                     <div className="tel">
                         <PhoneInput
                             placeholder="78 3456 789"
@@ -25,8 +23,8 @@ const Auth = () => {
                             defaultCountry="RW"
                             />
                     </div>
-                    <button>
-                        <i className="fas fa-sign-in-alt"></i>
+                    <button onClick={()=> props.history.push('/signup')}>
+                        komeza <i className="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
             </form>
