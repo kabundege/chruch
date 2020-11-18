@@ -23,7 +23,9 @@ const Auth = (props) => {
                             defaultCountry="RW"
                             />
                     </div>
-                    <button onClick={()=> props.history.push('/signup')}>
+                    <button 
+                        disabled={ phone==="" ? true : false}
+                        onClick={()=> props.history.push('/signup')}>
                         komeza <i className="fas fa-sign-in-alt"></i>
                     </button>
                 </div>

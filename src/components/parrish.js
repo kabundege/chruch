@@ -32,7 +32,9 @@ class Parrish extends Component{
                                 <option value="isano">Isano</option>
                             </select>
                         </div>
-                        <button onClick={()=> this.props.history.push('/owner')}>
+                        <button 
+                            disabled={ paruwase === "" ? true : false }
+                            onClick={()=> this.props.history.push('/owner')}>
                             Komeza <i className="fas fa-sign-in-alt"></i>
                         </button>
                     </div>

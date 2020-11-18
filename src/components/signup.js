@@ -39,7 +39,9 @@ class SignUp extends Component{
                                 placeholder="Itorero ry'ibanze" 
                                 onChange={this.handlerchange}/>
                         </div>
-                        <button onClick={()=> this.props.history.push('/parrish')}>
+                        <button 
+                            disabled={ amazina === "" || itorero_ryibanze === "" ? true : false }
+                            onClick={()=> this.props.history.push('/parrish')}>
                             Komeza <i className="fas fa-sign-in-alt"></i>
                         </button>
                     </div>
