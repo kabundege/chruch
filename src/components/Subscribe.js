@@ -6,8 +6,8 @@ class Parrish extends Component{
         service:"",
     }
     handlerchange = e => {
-        const { name,value } = e.target;
-        this.setState({ [name]:value });
+        const { id,value } = e.target;
+        this.setState({ [id]:value });
     }
     render(){
         const { service } = this.state;
@@ -22,13 +22,12 @@ class Parrish extends Component{
                         <h1>Iteraniro <i style={{fontSize:"large",textShadow:"none"}} class="fas fa-sort-numeric-down"></i> </h1>
                         <div className="input-field">
                             <span>🏡</span>
-                            <select name="service" value={service} onChange={this.handlerChange}>
-                                <option defaultValue disabled>Hitamo</option>
+                            <select id="service" value={service} onChange={this.handlerchange}>
+                                <option value="" disabled>Hitamo</option>
                                 <option value="1">Iry'ambere</option>
                                 <option value="2">Irya kabiri</option>
                             </select>
                         </div>
-                        <br/>
                         <button    
                             onClick={()=> this.props.history.push('/final')}>
                             Emeza 👍

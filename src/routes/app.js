@@ -8,7 +8,7 @@ import Parrish from '../components/parrish';
 import NotFound from '../components/Notfound';
 import Subscribe from '../components/Subscribe';
 
-export default () => {
+const routes = () => {
   return (
     <BrowserRouter>
       <div className="App">
@@ -28,3 +28,5 @@ export default () => {
     </BrowserRouter>
   )
 }
+
+export default routes;

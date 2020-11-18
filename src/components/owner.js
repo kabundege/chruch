@@ -34,7 +34,7 @@ class Owner extends Component{
                         <i className="fas fa-church"></i>
                     </h1>
                     <div className="parent">
-                        <h1>Uwiyandikisha 📋</h1>
+                        <h1>Hitamo 📋</h1>
                         <div className="input-field">
                             <input
                                 type="radio"

@@ -7,9 +7,8 @@ class Parrish extends Component{
     }
 
     handlerchange = e => {
-        const { name,value } = e.target;
-        this.setState({ [name]:value });
-        console.log("got here",name,value);
+        const { id,value } = e.target;
+        this.setState({ [id]:value });
     }
 
     render(){
@@ -25,7 +24,7 @@ class Parrish extends Component{
                         <h1>Paruwase</h1>
                         <div className="input-field">
                             <span>⛪</span>
-                            <select name="paruwase" value={paruwase} onChange={this.handlerChange}>
+                            <select id="paruwase" value={paruwase} onChange={this.handlerchange}>
                                 <option value="" disabled>Hitamo</option>
                                 <option value="karugira">Karugira</option>
                                 <option value="kiyovu">Kiyovu</option>
