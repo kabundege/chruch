@@ -1,26 +1,57 @@
-import React,{ Component } from 'react';
 import '../scss/components/auth.scss';
+import { connect } from 'react-redux';
+import React,{ Component } from 'react';
+import Loader from "react-spinners/BeatLoader";
+import { SignUp } from '../store/actions/actions';
 
-class SignUp extends Component{
+class Register extends Component{
     state = {
         amazina:"",
-        itorero_ryibanze:""
+        itorero_ryibanze:"",
+        subtmitted: false
     }
     handlerchange = e => {
         const { name,value } = e.target;
         this.setState({ [name]:value });
     }
+
+    handlerSubmit = e => {
+        e.preventDefault()
+
+        const { amazina,itorero_ryibanze } = this.state;
+
+        this.setState({ submitted:true })
+
+        this.props.Signup({ 
+            phonenumber: localStorage.getItem('phoneNumber'),
+            amazina,
+            itorero_ryibanze,
+            role:'Christian'
+        })
+    }
+
+    componentDidUpdate(){
+        const { submitted } = this.state;
+        const { loading,signupError } = this.props.Authdata;
+        if(!loading&&submitted){
+            if(signupError === null){
+                this.props.history.push('/parrish')
+            }
+        }
+    }
+
     render(){
         const { amazina,itorero_ryibanze } = this.state;
+        const { loading,signupError } = this.props.Authdata;
         return(
             <div className="auth">
                 <section className="bg"></section>
-                <form onSubmit={(e=>e.preventDefault())}>
+                <form onSubmit={this.handlerSubmit}>
                     <h1>
                         <i className="fas fa-church"></i>
                     </h1>
                     <div className="parent">
-                        <h1>Imyirondoro 🖊</h1>
+                        <h1>Rema Konti 🖊</h1>
                         <div className="input-field">
                             <span>👤</span>
                             <input 
@@ -39,9 +70,14 @@ class SignUp extends Component{
                                 placeholder="Itorero ry'ibanze" 
                                 onChange={this.handlerchange}/>
                         </div>
-                        <button 
-                            onClick={()=> this.props.history.push('/parrish')}>
-                            Komeza <i className="fas fa-sign-in-alt"></i>
+                        
+                        { signupError !== "" && <p id="error">  <i className="fas fa-exclamation-triangle"></i> {signupError} </p>}
+
+                        <button>
+                            {   !loading ?
+                                <>Komeza <i className="fas fa-sign-in-alt"></i> </>:
+                                <Loader/>
+                            }
                         </button>
                     </div>
                 </form>
@@ -50,4 +86,12 @@ class SignUp extends Component{
     }
 }
 
-export default SignUp;
+const mapStateToProps = state => ({
+    Authdata : state.auth,
+})
+
+const mapDispathToProp = dispatch => ({
+    Signup : (payload)=> dispatch(SignUp(payload))
+})
+
+export default connect(mapStateToProps,mapDispathToProp)(Register);

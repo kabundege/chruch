@@ -4,24 +4,36 @@ import '../scss/components/auth.scss';
 class Parrish extends Component{
     state = {
         paruwase:"",
+        error:null
     }
 
     handlerchange = e => {
         const { id,value } = e.target;
-        this.setState({ [id]:value });
+        this.setState({ [id]:value,error: null });
+    }
+
+    handlerSubmit = e => {
+        e.preventDefault()
+        const { paruwase } = this.state;
+        if(paruwase === ""){
+            this.setState({ error : "Hitamo Paruwase" })
+        }else{
+            localStorage.setItem('Parrish',paruwase)
+            this.props.history.push('/owner')
+        }
     }
 
     render(){
-        const { paruwase } = this.state;
+        const { paruwase,error } = this.state;
         return(
             <div className="auth">
                 <section className="bg"></section>
-                <form onSubmit={(e=>e.preventDefault())}>
+                <form onSubmit={this.handlerSubmit}>
                     <h1>
                         <i className="fas fa-church"></i>
                     </h1>
                     <div className="parent">
-                        <h1>Paruwase</h1>
+                        <h1>Paruwase ✝</h1>
                         <div className="input-field">
                             <span>⛪</span>
                             <select id="paruwase" value={paruwase} onChange={this.handlerchange}>
@@ -31,9 +43,11 @@ class Parrish extends Component{
                                 <option value="isano">Isano</option>
                             </select>
                         </div>
-                        <button 
-                            onClick={()=> this.props.history.push('/owner')}>
-                            Komeza <i className="fas fa-sign-in-alt"></i>
+                        
+                        { error !== null && <p id="error">  <i className="fas fa-exclamation-triangle"></i> Enter Your Phone Number </p>}
+
+                        <button >
+                            Komeza ↪
                         </button>
                     </div>
                 </form>

@@ -1,25 +1,62 @@
-import React,{ Component } from 'react';
+import { connect } from 'react-redux';
 import '../scss/components/auth.scss';
+import React,{ Component } from 'react';
+import Loader from "react-spinners/BeatLoader";
+import { Book } from '../store/actions/actions';
 
-class Parrish extends Component{
+class Subscribe extends Component{
     state = {
         service:"",
+        error:null,
+        submitted:false
     }
+
     handlerchange = e => {
         const { id,value } = e.target;
-        this.setState({ [id]:value });
+        this.setState({ [id]:value,error:null });
     }
-    render(){
+
+    handlerSubmit = e => {
+        e.preventDefault()
         const { service } = this.state;
+        if(service === ""){
+            this.setState({ error : "Hitamo Iteraniro"})
+        }else{
+            if(window.confirm("Ntacyo wahindura")){
+                let data = {
+                    paruwasi: `${localStorage.getItem('parrish')}`,
+                    service,
+                }
+                if(localStorage.getItem('owner')!==null){
+                    data = {...data, amazina : localStorage.getItem('owner')}
+                }
+                this.setState({ submitted: true })
+                this.props.BookAseat(data)
+            }
+        }
+    }
+
+    componentDidUpdate(){
+        const { authData: loading } = this.props;
+        const { bookData: Booking } = this.props;
+        if( this.state.submitted && !loading && Booking !== null ){
+            this.props.history.push('/final')
+        }
+    }
+
+    render(){
+        const { service,error } = this.state;
+        const { loading } = this.props.authData;
+        const { BookError } = this.props.bookData
         return(
             <div className="auth">
                 <section className="bg"></section>
-                <form onSubmit={(e=>e.preventDefault())}>
+                <form onSubmit={this.handlerSubmit}>
                     <h1>
                         <i className="fas fa-church"></i>
                     </h1>
                     <div className="parent">
-                        <h1>Iteraniro <i style={{fontSize:"large",textShadow:"none"}} class="fas fa-sort-numeric-down"></i> </h1>
+                        <h1>Iteraniro <i style={{fontSize:"large",textShadow:"none"}} className="fas fa-sort-numeric-down"></i> </h1>
                         <div className="input-field">
                             <span>🏡</span>
                             <select id="service" value={service} onChange={this.handlerchange}>
@@ -28,9 +65,12 @@ class Parrish extends Component{
                                 <option value="2">Irya kabiri</option>
                             </select>
                         </div>
-                        <button    
-                            onClick={()=> this.props.history.push('/final')}>
-                            Emeza 👍
+
+                        { error !== null && <p id="error"><i className="fas fa-exclamation-triangle"></i> Hitamo Iteraniro <i className="fas fa-exclamation-triangle"></i></p>}
+                        { BookError !== "" && <p id="error">  <i className="fas fa-exclamation-triangle"></i> {BookError} </p>}
+
+                        <button >
+                           { loading ? <Loader/> : <> Emeza 👍 </> }
                         </button>
                     </div>
                 </form>
@@ -39,4 +79,13 @@ class Parrish extends Component{
     }
 }
 
-export default Parrish;
+const mapStateToProps = state => ({
+    authData: state.auth,
+    bookData: state.book,
+})
+
+const mapDispatchToProps = dispatch => ({
+    BookAseat : payload => dispatch(Book(payload))
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(Subscribe);

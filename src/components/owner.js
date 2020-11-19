@@ -1,15 +1,29 @@
 import React,{ Component } from 'react';
+import { connect } from 'react-redux';
 import '../scss/components/auth.scss';
 import { motion } from 'framer-motion';
 
 class Owner extends Component{
     state = {
         owner:"umubyeyi",
-        amazina:""
+        amazina:"",
+        error:null
     }
     handlerchange = e => {
         const { name,value } = e.target;
-        this.setState({ [name]:value });
+        this.setState({ [name]:value,error:null });
+    }
+    handlerSubmit = e =>{
+        e.preventDefault();
+        const { owner,amazina } = this.state;
+        if(owner === 'umwana' && amazina === ""){
+            this.setState({ error : "Amazina Y'umwana" })
+        }else{
+            if(amazina!==""){
+                localStorage.setItem('owner',amazina)
+            }
+            this.props.history.push('/subscribe')
+        }
     }
     nextVariants = {
         hidden: { 
@@ -25,11 +39,11 @@ class Owner extends Component{
         }
     }      
     render(){
-        const { owner,amazina } = this.state;
+        const { owner,amazina,error } = this.state;
         return(
             <div className="auth">
                 <section className="bg"></section>
-                <form onSubmit={(e=>e.preventDefault())}>
+                <form onSubmit={this.handlerSubmit}>
                     <h1>
                         <i className="fas fa-church"></i>
                     </h1>
@@ -74,7 +88,10 @@ class Owner extends Component{
                             </motion.div>
                             </>
                         }
-                        <button onClick={()=> this.props.history.push('/subscribe')}>
+
+                        { error !== null && <p id="error">  <i className="fas fa-exclamation-triangle"></i> Enter Your Phone Number </p>}
+
+                        <button >
                             Komeza <i className="fas fa-sign-in-alt"></i>
                         </button>
                     </div>
@@ -84,4 +101,8 @@ class Owner extends Component{
     }
 }
 
-export default Owner;
+const mapStateToProps = state => ({
+    authdata : state.auth,
+})
+
+export default connect(mapStateToProps)(Owner);
