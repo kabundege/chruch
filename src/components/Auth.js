@@ -9,11 +9,16 @@ import PhoneInput from 'react-phone-number-input';
 class Auth extends Component{
     state = {
         phone:'',
-        submitted:false
+        submitted:false,
+        error:""
     }
 
     handlerChange = data => {
-        this.setState({ phone: data })
+        if(data){
+            data.length >= 14 ?
+            this.setState({ error: 'imibare 9 yuzuye' }):
+            this.setState({ phone: data,error:"" })
+        }
     }
 
     handlerSubmit = e => {
@@ -46,9 +51,8 @@ class Auth extends Component{
     }
 
     render(){
-        const { phone } = this.state;
+        const { phone,error } = this.state;
         const { loading,authError } = this.props.Authdata;
-        console.log(authError)
         return(
             <div className="auth">
                 <section className="bg"></section>
@@ -69,6 +73,8 @@ class Auth extends Component{
 
                         { authError !== null && authError !== "" && <p id="error">  <i className="fas fa-exclamation-triangle"></i> Enter Your Phone Number </p>}
 
+                        { error !== "" && <p id="error">  <i className="fas fa-exclamation-triangle"></i> {error}</p>}
+                        
                         <button>
                             {   !loading ?
                                 <>Injira <i className="fas fa-sign-in-alt"></i> </>:

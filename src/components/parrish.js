@@ -44,7 +44,7 @@ class Parrish extends Component{
                             </select>
                         </div>
                         
-                        { error !== null && <p id="error">  <i className="fas fa-exclamation-triangle"></i> Enter Your Phone Number </p>}
+                        { error !== null && <p id="error">  <i className="fas fa-exclamation-triangle"></i> Hitamo Paruwase </p>}
 
                         <button >
                             Komeza ↪

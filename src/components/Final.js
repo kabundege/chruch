@@ -1,11 +1,11 @@
-import React,{ Component } from 'react';
+import { connect } from 'react-redux';
 import '../scss/components/auth.scss';
+import React,{ Component } from 'react';
 
 class Parrish extends Component{
     state = {
         paruwase:"Karugira",
         amazina:"Kabundege Christophe",
-        itorero_ryibanze:"karugira",
         iteraniro:1
     }
     handlerchange = e => {
@@ -13,7 +13,7 @@ class Parrish extends Component{
         this.setState({ [name]:value });
     }
     render(){
-        const { paruwase,amazina,itorero_ryibanze,iteraniro } = this.state;
+        const { paruwasi,amazina,service,date } = this.props.Book.Booking;
         return(
             <div className="auth">
                 <section className="bg"></section>
@@ -23,27 +23,31 @@ class Parrish extends Component{
                     </h1>
                     <div className="parent">
                         <i style={{fontSize:"40px",margin:"3% 0",color:"green"}} className="far fa-check-circle"></i> 
+                        
+                        <div className="inputer">
+                        <div className="input-field">
+                                <span>⛪</span>
+                                <span style={{marginLeft:"5px"}}>{paruwasi}</span>
+                            </div>
+                            <div className="input-field">
+                                <span>🛐</span>
+                                <span style={{marginLeft:"5px"}}>iteraniro { service === "1" ? 'ry\'ambere':'rya kabiri'}</span>
+                            </div>
+
                         <div className="input-field">
                             <span>👤</span>
                             <span style={{margin:"0px 5px"}}>{amazina}</span>
                         </div>
                         <div className="input-field">
-                            <span>👥</span>
-                            <span style={{margin:"0px 5px"}}>Itorero Ry'ibanze Rya {itorero_ryibanze}</span>
+                            <span>📌</span>
+                            <span style={{margin:"0px 5px"}}>Ku cyumweru Tariki {date}/{new Date().getMonth()}/{new Date().getFullYear()}</span>
                         </div>
-
-                        <div className="inputer">
-                            <div className="input-field">
-                                <span>⛪</span>
-                                <span style={{marginLeft:"5px"}}>{paruwase}</span>
-                            </div>
-                            <div className="input-field">
-                                <span>🛐</span>
-                                <span style={{marginLeft:"5px"}}>iteraniro {iteraniro}</span>
-                            </div>
                         </div>
-                        <button style={{margin:"3% 0"}} onClick={()=> this.props.history.push('/')}>
-                            Ahabanza <i className="fas fa-sign-in-alt"></i>
+                        <button className="end" style={{margin:"3% 0"}} onClick={()=>{
+                                localStorage.clear();
+                                window.location.assign('/')
+                             }}>
+                            Sohoka <i className="fas fa-sign-in-alt"></i>
                         </button>
                     </div>
                 </form>
@@ -52,4 +56,8 @@ class Parrish extends Component{
     }
 }
 
-export default Parrish;
+const mapStateToProps = state => ({
+    Book: state.book
+})
+
+export default connect(mapStateToProps)(Parrish);

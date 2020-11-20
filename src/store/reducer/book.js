@@ -13,11 +13,16 @@ const BookReducer = (state = initState,Action) => {
                 Booking:null,
             }
         case 'BookAseat_Success':
-            localStorage.removeItem("token")
+            localStorage.clear()
             return state = {
                 ...state,
                 BookError:null,
                 Booking:action,
+            }
+        case'clear':
+            return state = {
+                ...state,
+                BookError:""
             }
         default:
             return state

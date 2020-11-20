@@ -21,10 +21,10 @@ class Subscribe extends Component{
         const { service } = this.state;
         if(service === ""){
             this.setState({ error : "Hitamo Iteraniro"})
-        }else{
+        }else if(service !== ""){
             if(window.confirm("Ntacyo wahindura")){
                 let data = {
-                    paruwasi: `${localStorage.getItem('parrish')}`,
+                    paruwasi: `${localStorage.getItem('Parrish')}`,
                     service,
                 }
                 if(localStorage.getItem('owner')!==null){
@@ -37,11 +37,14 @@ class Subscribe extends Component{
     }
 
     componentDidUpdate(){
-        const { authData: loading } = this.props;
-        const { bookData: Booking } = this.props;
+        const { loading } = this.props.authData;
+        const {  Booking } = this.props.bookData;
         if( this.state.submitted && !loading && Booking !== null ){
             this.props.history.push('/final')
         }
+    }
+    componentDidMount(){
+        this.props.dawn()
     }
 
     render(){
@@ -66,12 +69,20 @@ class Subscribe extends Component{
                             </select>
                         </div>
 
-                        { error !== null && <p id="error"><i className="fas fa-exclamation-triangle"></i> Hitamo Iteraniro <i className="fas fa-exclamation-triangle"></i></p>}
+                        { error !== null && <p id="error"><i className="fas fa-exclamation-triangle"></i> Hitamo Iteraniro</p>}
                         { BookError !== "" && <p id="error">  <i className="fas fa-exclamation-triangle"></i> {BookError} </p>}
 
-                        <button >
-                           { loading ? <Loader/> : <> Emeza 👍 </> }
-                        </button>
+                        { BookError !== 'Ntabwo Wakwiyandika Kabiri' ?
+                            <button >
+                            { loading ? <Loader/> : <> Emeza 👍 </> }
+                            </button> :
+                            <button onClick={()=> {
+                                window.localStorage.clear();
+                                window.location.assign('/')
+                            }}>
+                                Ababanza
+                            </button> 
+                        }
                     </div>
                 </form>
             </div>
@@ -85,7 +96,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    BookAseat : payload => dispatch(Book(payload))
+    BookAseat : payload => dispatch(Book(payload)),
+    dawn: () => dispatch({type:"clear",undefined})
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(Subscribe);

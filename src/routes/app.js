@@ -11,6 +11,10 @@ import NotFound from '../components/Notfound';
 import Subscribe from '../components/Subscribe';
 
 const routes = () => {
+  const address = window.location.pathname;
+  if(address !== "/" && address !== '/signup' && localStorage.getItem("token") === null){
+    return window.location.assign('/')
+  }
   return (
     <BrowserRouter>
       <div className="App">
