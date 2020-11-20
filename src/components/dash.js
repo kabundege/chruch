@@ -3,15 +3,14 @@ import '../scss/components/auth.scss';
 
 class SignUp extends Component{
     state = {
-        amazina:"",
-        itorero_ryibanze:""
+        search:""
     }
     handlerchange = e => {
         const { name,value } = e.target;
         this.setState({ [name]:value });
     }
     render(){
-        const { amazina,itorero_ryibanze } = this.state;
+        const { search } = this.state;
         return(
             <div className="auth">
                 <section className="bg"></section>
@@ -20,28 +19,18 @@ class SignUp extends Component{
                         <i className="fas fa-church"></i>
                     </h1>
                     <div className="parent">
-                        <h1>Imyirondoro 🖊</h1>
+                        <h1>Hitamo 🔎</h1>
                         <div className="input-field">
-                            <span>👤</span>
-                            <input 
-                                type="text" 
-                                value={amazina} 
-                                name="amazina" 
-                                placeholder="Amazina" 
-                                onChange={this.handlerchange}/>
+                            <span>⛪</span>
+                            <select id="search" value={search} onChange={this.handlerchange}>
+                                <option value="" disabled>Hitamo</option>
+                                <option value="karugira">Karugira</option>
+                                <option value="kiyovu">Kiyovu</option>
+                                <option value="isano">Isano</option>
+                            </select>
                         </div>
-                        <div className="input-field">
-                            <span>👥</span>
-                            <input
-                                type="text" 
-                                value={itorero_ryibanze} 
-                                name="itorero_ryibanze" 
-                                placeholder="Itorero ry'ibanze" 
-                                onChange={this.handlerchange}/>
-                        </div>
-                        <button 
-                            onClick={()=> this.props.history.push('/parrish')}>
-                            Komeza <i className="fas fa-sign-in-alt"></i>
+                        <button >
+                            Shakisha
                         </button>
                     </div>
                 </form>

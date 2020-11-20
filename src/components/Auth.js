@@ -10,7 +10,7 @@ class Auth extends Component{
     state = {
         phone:'',
         submitted:false,
-        error:""
+        error:"Tanga numero yawe, hera kuri 7.."
     }
 
     handlerChange = data => {
@@ -18,6 +18,8 @@ class Auth extends Component{
             data.length >= 14 ?
             this.setState({ error: 'imibare 9 yuzuye' }):
             this.setState({ phone: data,error:"" })
+        }else{
+            this.setState({ error: 'Tanga numero yawe, hera kuri 7...' })
         }
     }
 
@@ -69,7 +71,7 @@ class Auth extends Component{
                         <h1>Muraho 👋</h1>
                         <div className="tel">
                             <PhoneInput
-                                placeholder="78 3456 789"
+                                placeholder="78... cg 73... cg 72..."
                                 value={phone}
                                 onChange={this.handlerChange}
                                 defaultCountry="RW"
