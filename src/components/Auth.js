@@ -26,7 +26,12 @@ class Auth extends Component{
         this.setState({
             submitted:true
         })
-        this.props.login({ phonenumber: `${this.state.phone}` })
+
+        if(this.state.phone.length < 13 ){
+            this.setState({ error: 'imibare 9 Ntiruzura' })
+        }else{
+            this.props.login({ phonenumber: `${this.state.phone}` })
+        }
     }
 
     componentDidUpdate(){
@@ -57,7 +62,7 @@ class Auth extends Component{
             <div className="auth">
                 <section className="bg"></section>
                 <form onSubmit={this.handlerSubmit}>
-                    <h1 className="header">
+                    <h1 className="brand">
                         <i className="fas fa-church"></i>
                     </h1>
                     <div className="parent">

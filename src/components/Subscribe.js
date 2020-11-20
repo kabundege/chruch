@@ -55,7 +55,7 @@ class Subscribe extends Component{
             <div className="auth">
                 <section className="bg"></section>
                 <form onSubmit={this.handlerSubmit}>
-                    <h1>
+                    <h1 className="brand">                    
                         <i className="fas fa-church"></i>
                     </h1>
                     <div className="parent">
@@ -76,12 +76,12 @@ class Subscribe extends Component{
                             <button >
                             { loading ? <Loader/> : <> Emeza 👍 </> }
                             </button> :
-                            <button onClick={()=> {
+                            <header onClick={()=> {
                                 window.localStorage.clear();
                                 window.location.assign('/')
                             }}>
                                 Ababanza
-                            </button> 
+                            </header> 
                         }
                     </div>
                 </form>

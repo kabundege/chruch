@@ -38,6 +38,16 @@ class Register extends Component{
                 this.props.history.push('/parrish')
             }
         }
+
+        if(localStorage.getItem("token") !== null){
+            this.props.history.push('/parrish')
+        }
+    }
+    
+    componentDidMount(){
+        if(localStorage.getItem("token") !== null){
+            this.props.history.push('/parrish')
+        }
     }
 
     render(){
@@ -47,7 +57,7 @@ class Register extends Component{
             <div className="auth">
                 <section className="bg"></section>
                 <form onSubmit={this.handlerSubmit}>
-                    <h1>
+                    <h1 className="brand">                    
                         <i className="fas fa-church"></i>
                     </h1>
                     <div className="parent">

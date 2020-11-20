@@ -18,12 +18,17 @@ class Parrish extends Component{
             <div className="auth">
                 <section className="bg"></section>
                 <form onSubmit={(e=>e.preventDefault())}>
-                    <h1>
+                    <h1 className="brand">
                         <i className="fas fa-church"></i>
                     </h1>
                     <div className="parent">
-                        <i style={{fontSize:"40px",margin:"3% 0",color:"green"}} className="far fa-check-circle"></i> 
-                        
+                        <h1>
+                        Uhawe Ikaze 
+                        { window.screen.width <= 700 ?
+                            <i style={{fontSize:"40px",margin:"15% 0 -5% 10px",color:"green"}} className="far fa-check-circle"></i> :
+                            <span style={{margin:"15% 0 -5% 10px",}}>👐</span>
+                        }
+                        </h1>
                         <div className="inputer">
                         <div className="input-field">
                                 <span>⛪</span>
@@ -40,7 +45,7 @@ class Parrish extends Component{
                         </div>
                         <div className="input-field">
                             <span>📌</span>
-                            <span style={{margin:"0px 5px"}}>Ku cyumweru Tariki {date}/{new Date().getMonth()}/{new Date().getFullYear()}</span>
+                            <span style={{margin:"0px 5px"}}>Ku cyumweru Tariki <strong>{date}/{new Date().getMonth()}/{new Date().getFullYear()}</strong></span>
                         </div>
                         </div>
                         <button className="end" style={{margin:"3% 0"}} onClick={()=>{

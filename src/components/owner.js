@@ -44,7 +44,7 @@ class Owner extends Component{
             <div className="auth">
                 <section className="bg"></section>
                 <form onSubmit={this.handlerSubmit}>
-                    <h1>
+                    <h1 className="brand">                    
                         <i className="fas fa-church"></i>
                     </h1>
                     <div className="parent">
