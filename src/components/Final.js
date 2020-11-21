@@ -52,7 +52,7 @@ class Parrish extends Component{
                                 localStorage.clear();
                                 window.location.assign('/')
                              }}>
-                            Sohoka <i className="fas fa-sign-in-alt"></i>
+                            Sohoka <i className="fas fa-sign-out-alt"></i>
                         </button>
                     </div>
                 </form>

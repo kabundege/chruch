@@ -18,6 +18,6 @@ export const Book = (payload) => {
 
 
 export const GetAllBooks = () => {
-    const action = {successStatus:201,actionName:'GetAllBooks'}
+    const action = {successStatus:200,actionName:'GetAllBooks'}
     return reqHandler('/books','GET',undefined,action);
 };

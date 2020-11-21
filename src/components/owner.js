@@ -9,10 +9,12 @@ class Owner extends Component{
         amazina:"",
         error:null
     }
+    
     handlerchange = e => {
         const { name,value } = e.target;
         this.setState({ [name]:value,error:null });
     }
+
     handlerSubmit = e =>{
         e.preventDefault();
         const { owner,amazina } = this.state;
@@ -25,6 +27,7 @@ class Owner extends Component{
             this.props.history.push('/subscribe')
         }
     }
+
     nextVariants = {
         hidden: { 
           x: '-100vw' 
@@ -92,7 +95,7 @@ class Owner extends Component{
                         { error !== null && <p id="error">  <i className="fas fa-exclamation-triangle"></i> Enter Your Phone Number </p>}
 
                         <button >
-                            Komeza <i className="fas fa-sign-in-alt"></i>
+                            Komeza ↪
                         </button>
                     </div>
                 </form>

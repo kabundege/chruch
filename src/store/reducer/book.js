@@ -12,17 +12,30 @@ const BookReducer = (state = initState,Action) => {
                 BookError:action,
                 Booking:null,
             }
+        case'GetAllBooks_Error':
+            return state = {
+                ...state,
+                BookError:action,
+                Booking:null,
+            }
+        case'GetAllBooks_Success':
+            return state = {
+                ...state,
+                BookError:"",
+                Booking:action,
+            }
         case 'BookAseat_Success':
             localStorage.clear()
             return state = {
                 ...state,
-                BookError:null,
+                BookError:"",
                 Booking:action,
             }
         case'clear':
             return state = {
                 ...state,
-                BookError:""
+                BookError:"",
+                Booking:null
             }
         default:
             return state

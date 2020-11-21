@@ -100,7 +100,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispathToProp = dispatch => ({
-    login : (payload)=> dispatch(SignIn(payload))
+    login : (payload)=> dispatch(SignIn(payload)),
+    dawn: () => dispatch({type:"clear",undefined})
 })
 
 export default connect(mapStateToProps,mapDispathToProp)(Auth);
