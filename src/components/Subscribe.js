@@ -37,7 +37,6 @@ class Subscribe extends Component{
     }
 
     componentDidUpdate(){
-        const { loading } = this.props.authData;
         const {  Booking } = this.props.bookData;
         if( Booking !== null ){
             this.props.history.push('/final')

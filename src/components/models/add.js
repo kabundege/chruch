@@ -4,7 +4,7 @@ import '../../scss/components/add.scss';
 
 const Add = () => (
         <div className="Add">
-            <h4>Created with <span style={{color:'red',fontSize:"30px"}}>❤</span> <Link to="//github.com/kabundege">Christophe Kabundege <span>🔗</span></Link></h4>
+            <h4>Created With <span style={{color:'red',position:'relative',top:'50%'}}>❤</span> <Link to="//github.com/kabundege" target="_blanck">Christophe K.</Link></h4>
         </div>
 )
 export default Add;
