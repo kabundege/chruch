@@ -25,7 +25,7 @@ class Subscribe extends Component{
             if(window.confirm("Ntacyo wahindura")){
                 let data = {
                     paruwasi: `${localStorage.getItem('Parrish')}`,
-                    service,
+                    service: parseInt(service),
                 }
                 if(localStorage.getItem('owner')!==null){
                     data = {...data, amazina : localStorage.getItem('owner')}

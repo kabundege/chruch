@@ -24,8 +24,8 @@ class Register extends Component{
 
         this.props.Signup({ 
             phonenumber: localStorage.getItem('phoneNumber'),
-            amazina,
-            itorero_ryibanze,
+            amazina :`${amazina}`.toLowerCase(),
+            itorero_ryibanze: `${itorero_ryibanze}`.toLowerCase(),
             role:'Christian'
         })
     }

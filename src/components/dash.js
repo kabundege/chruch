@@ -45,6 +45,7 @@ class Dash extends Component{
         return(
             <div className="auth">
                 {showModal && <Modal 
+                    searchContent={search}
                     type={this.state.type} 
                     loading={loading} 
                     data={this.props.bookData}
@@ -58,14 +59,15 @@ class Dash extends Component{
                     <div className="parent">
                         <h1>Ishakiro 🔎</h1>
                         <div className="input-field">
-                            { search === "" && <span>⚡</span>}
-                            <select id="search" value={search} onChange={this.handlerchange} required>
+                            { type === "" && <span>⚡</span>}
+                            <select id="type" value={type} onChange={this.handlerchange} required>
                                 <option value="" disabled>Hitamo</option>
-                                <option value="karugira">⛪ Paruwasi</option>
-                                <option value="kiyovu">👥 Itorero ryibanze </option>
+                                <option value="amazina">👤 Umuntu </option>
+                                <option value="paruwasi">⛪ Paruwasi</option>
+                                <option value="itorero_ryibanze">👥 Itorero ryibanze </option>
                             </select>
                         </div>
-                        { search !== "" && 
+                        { type !== "" && 
                             <>
                             <hr style={{backgroundImage:"white",color:"white",fontWeight:"bold",width:"80%"}}/>
                             <motion.div 
@@ -79,9 +81,10 @@ class Dash extends Component{
                                 <input 
                                     required
                                     type="text" 
-                                    value={type} 
-                                    id="type" 
-                                    placeholder="Injiza Amazina" 
+                                    value={search} 
+                                    id="search" 
+                                    autoFocus={ window.screen.width > 700 ? true : false }
+                                    placeholder={"Injiza mo " + type + ", Aha..."}
                                     onChange={this.handlerchange}/>
                             </motion.div>
                             </>
@@ -97,7 +100,7 @@ class Dash extends Component{
 }
 
 const mapStateToProps = state => ({
-    bookData : state.book.Bookings,
+    bookData : state.book.Booking,
     authData: state.auth,
 })
 

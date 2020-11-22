@@ -45,7 +45,7 @@ class Parrish extends Component{
                         </div>
                         <div className="input-field">
                             <span>📌</span>
-                            <span style={{margin:"0px 5px"}}>Ku cyumweru Tariki <strong>{date}/{new Date().getMonth()}/{new Date().getFullYear()}</strong></span>
+                            <span style={{margin:"0px 5px"}}>Ku cyumweru Tariki <strong>{date}</strong></span>
                         </div>
                         </div>
                         <button className="end" style={{margin:"3% 0"}} onClick={()=>{

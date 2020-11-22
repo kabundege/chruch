@@ -6,6 +6,7 @@ import Owner from '../components/owner';
 import Final from '../components/Final';
 import Network from '../helpers/network';
 import Signup from '../components/signup';
+import Add from '../components/models/add';
 import Parrish from '../components/parrish';
 import NotFound from '../components/Notfound';
 import Subscribe from '../components/Subscribe';
@@ -19,6 +20,7 @@ const routes = () => {
     <BrowserRouter>
       <div className="App">
         <Network/>
+        <Add />
         <Switch>
             <Route path='/' exact component={Login}/>
             <Route path='/dash' exact component={Dash}/> 

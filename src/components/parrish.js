@@ -18,7 +18,7 @@ class Parrish extends Component{
         if(paruwase === ""){
             this.setState({ error : "Hitamo Paruwase" })
         }else{
-            localStorage.setItem('Parrish',paruwase)
+            localStorage.setItem('Parrish',paruwase.toLowerCase())
             this.props.history.push('/owner')
         }
     }
@@ -38,7 +38,7 @@ class Parrish extends Component{
                             <span>⛪</span>
                             <select id="paruwase" value={paruwase} onChange={this.handlerchange}>
                                 <option value="" disabled>Hitamo</option>
-                                <option value="karugira">Karugira</option>
+                                <option value="gikondo">Gikondo</option>
                                 <option value="kiyovu">Kiyovu</option>
                                 <option value="isano">Isano</option>
                             </select>
