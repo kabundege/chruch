@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/church/static/css/main.93c44338.chunk.css",
+    "main.js": "/church/static/js/main.9da509d7.chunk.js",
+    "main.js.map": "/church/static/js/main.9da509d7.chunk.js.map",
+    "runtime-main.js": "/church/static/js/runtime-main.655d10f3.js",
+    "runtime-main.js.map": "/church/static/js/runtime-main.655d10f3.js.map",
+    "static/css/2.97094cdd.chunk.css": "/church/static/css/2.97094cdd.chunk.css",
+    "static/js/2.4a901a59.chunk.js": "/church/static/js/2.4a901a59.chunk.js",
+    "static/js/2.4a901a59.chunk.js.map": "/church/static/js/2.4a901a59.chunk.js.map",
+    "index.html": "/church/index.html",
+    "static/css/2.97094cdd.chunk.css.map": "/church/static/css/2.97094cdd.chunk.css.map",
+    "static/css/main.93c44338.chunk.css.map": "/church/static/css/main.93c44338.chunk.css.map",
+    "static/js/2.4a901a59.chunk.js.LICENSE.txt": "/church/static/js/2.4a901a59.chunk.js.LICENSE.txt",
+    "static/media/base.scss": "/church/static/media/bible.b238bdb5.jpg",
+    "static/media/auth.scss": "/church/static/media/wave.59f9400a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.655d10f3.js",
+    "static/css/2.97094cdd.chunk.css",
+    "static/js/2.4a901a59.chunk.js",
+    "static/css/main.93c44338.chunk.css",
+    "static/js/main.9da509d7.chunk.js"
+  ]
+}
