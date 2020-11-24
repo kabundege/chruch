@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import '../scss/components/auth.scss';
-import Logout from '../helpers/logout';
 import React,{ Component } from 'react';
 import Loader from "react-spinners/BeatLoader";
 import { Book } from '../store/actions/actions';
@@ -70,13 +69,12 @@ class Subscribe extends Component{
                         </div>
 
                         { error !== null && <p id="error"><i className="fas fa-exclamation-triangle"></i> Hitamo Iteraniro</p>}
-                        { BookError !== "" && <p id="error">  <i className="fas fa-exclamation-triangle"></i> {BookError} </p>}
+                        { BookError !== "" && <p id="error"> <br/> <i className="fas fa-exclamation-triangle"></i> {BookError} </p>}
 
-                        { BookError !== 'Ntabwo Wakwiyandika Kabiri' ?
+                        { BookError !== 'Ntabwo Wakwiyandika Kabiri' &&
                             <button >
                             { loading ? <Loader/> : <> Emeza 👍 </> }
-                            </button> :
-                            <Logout />
+                            </button> 
                         }
                     </div>
                 </form>

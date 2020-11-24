@@ -1,6 +1,7 @@
 import React from  'react';
 import { Switch,Route,BrowserRouter,Redirect } from 'react-router-dom';
 import Dash from '../components/dash';
+import Logout from '../helpers/logout';
 import Login from '../components/Auth';
 import Owner from '../components/owner';
 import Final from '../components/Final';
@@ -21,6 +22,7 @@ const routes = () => {
       <div className="App">
         <Network/>
         <Add />
+        <Logout/>
         <Switch>
             <Route path='/' exact component={Login}/>
             <Route path='/dash' exact component={Dash}/> 

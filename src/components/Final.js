@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import '../scss/components/auth.scss';
-import Logout from '../helpers/logout';
 import React,{ Component } from 'react';
 
 class Parrish extends Component{
@@ -49,7 +48,6 @@ class Parrish extends Component{
                             <span style={{margin:"0px 5px"}}>Ku cyumweru Tariki <strong>{date}</strong></span>
                         </div>
                         </div>
-                        <Logout/>
                     </div>
                 </form>
             </div>

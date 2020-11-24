@@ -18,26 +18,28 @@ const nextVariants = {
     },
   };
 
-const Logout = () => 
+const Logout = ({ authData }) => 
+  localStorage.getItem("token") !== null ||authData !== null ?
     <AnimatePresence>
-                <motion.div className="logout"
-                    variants={nextVariants} 
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    onClick={()=>{
-                        localStorage.clear();
-                        window.location.assign('/')
-                    }}
-                >
-                    <div>
-                    <i className="fas fa-power-off"></i>
-                    </div>
-                    <div className="words">
-                        <span> Sohoka </span>
-                    </div>
-                </motion.div>
-    </AnimatePresence>
+        <motion.div className="logout"
+            variants={nextVariants} 
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            onClick={()=>{
+                localStorage.clear();
+                window.location.assign('/')
+            }}
+        >
+            <div>
+            <i className="fas fa-power-off"></i>
+            </div>
+            <div className="words">
+                <span> Sohoka </span>
+            </div>
+        </motion.div>
+    </AnimatePresence> : <></>
+
 
 const mapStateToProps = state => ({
     authData : state.auth.userInfo
