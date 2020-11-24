@@ -1,6 +1,6 @@
 import '../scss/components/logout.scss';
 import { connect } from 'react-redux'
-import React,{ useState,useEffect } from 'react';
+import React from 'react';
 import { motion,AnimatePresence } from 'framer-motion';
 
 const nextVariants = {

@@ -17,6 +17,11 @@
         left: 37%;
         top: 14%;
     }
+    &:hover{
+        div{
+            i{ color: #333 }    
+        }
+    }
     div{
         padding: 8px 10px;
         font-size: 15px;
