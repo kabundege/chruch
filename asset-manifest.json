@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/church/static/css/main.cb2b375c.chunk.css",
-    "main.js": "/church/static/js/main.636ca9f2.chunk.js",
-    "main.js.map": "/church/static/js/main.636ca9f2.chunk.js.map",
-    "runtime-main.js": "/church/static/js/runtime-main.655d10f3.js",
-    "runtime-main.js.map": "/church/static/js/runtime-main.655d10f3.js.map",
-    "static/css/2.97094cdd.chunk.css": "/church/static/css/2.97094cdd.chunk.css",
-    "static/js/2.816879fd.chunk.js": "/church/static/js/2.816879fd.chunk.js",
-    "static/js/2.816879fd.chunk.js.map": "/church/static/js/2.816879fd.chunk.js.map",
-    "index.html": "/church/index.html",
-    "static/css/2.97094cdd.chunk.css.map": "/church/static/css/2.97094cdd.chunk.css.map",
-    "static/css/main.cb2b375c.chunk.css.map": "/church/static/css/main.cb2b375c.chunk.css.map",
-    "static/js/2.816879fd.chunk.js.LICENSE.txt": "/church/static/js/2.816879fd.chunk.js.LICENSE.txt",
-    "static/media/base.scss": "/church/static/media/bible.b238bdb5.jpg",
-    "static/media/auth.scss": "/church/static/media/wave.59f9400a.svg"
+    "main.css": "/static/css/main.030f3bf2.chunk.css",
+    "main.js": "/static/js/main.b2a9ab5d.chunk.js",
+    "main.js.map": "/static/js/main.b2a9ab5d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a51edfd6.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a51edfd6.js.map",
+    "static/css/2.97094cdd.chunk.css": "/static/css/2.97094cdd.chunk.css",
+    "static/js/2.d4e4cb5e.chunk.js": "/static/js/2.d4e4cb5e.chunk.js",
+    "static/js/2.d4e4cb5e.chunk.js.map": "/static/js/2.d4e4cb5e.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.97094cdd.chunk.css.map": "/static/css/2.97094cdd.chunk.css.map",
+    "static/css/main.030f3bf2.chunk.css.map": "/static/css/main.030f3bf2.chunk.css.map",
+    "static/js/2.d4e4cb5e.chunk.js.LICENSE.txt": "/static/js/2.d4e4cb5e.chunk.js.LICENSE.txt",
+    "static/media/base.scss": "/static/media/bible.b238bdb5.jpg",
+    "static/media/auth.scss": "/static/media/wave.59f9400a.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.655d10f3.js",
+    "static/js/runtime-main.a51edfd6.js",
     "static/css/2.97094cdd.chunk.css",
-    "static/js/2.816879fd.chunk.js",
-    "static/css/main.cb2b375c.chunk.css",
-    "static/js/main.636ca9f2.chunk.js"
+    "static/js/2.d4e4cb5e.chunk.js",
+    "static/css/main.030f3bf2.chunk.css",
+    "static/js/main.b2a9ab5d.chunk.js"
   ]
 }
