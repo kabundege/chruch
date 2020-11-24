@@ -22,7 +22,7 @@ const routes = () => {
         <Network/>
         <Add />
         <Switch>
-            <Route path='/' component={Login}/>
+            <Route path='/' exact component={Login}/>
             <Route path='/dash' exact component={Dash}/> 
             <Route path='/owner' exact component={Owner}/>
             <Route path='/final' exact component={Final}/>

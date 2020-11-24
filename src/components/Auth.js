@@ -53,6 +53,7 @@ class Auth extends Component{
         }
     }
     componentDidMount(){
+        this.props.dawn();
         if(localStorage.getItem("token") !== null){
             this.props.history.push('/parrish')
         }

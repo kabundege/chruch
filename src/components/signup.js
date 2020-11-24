@@ -46,6 +46,7 @@ class Register extends Component{
     }
     
     componentDidMount(){
+        this.props.dawn();
         if(localStorage.getItem("token") !== null){
             this.props.history.push('/parrish')
         }
@@ -114,7 +115,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispathToProp = dispatch => ({
-    Signup : (payload)=> dispatch(SignUp(payload))
+    Signup : (payload)=> dispatch(SignUp(payload)),
+    dawn: () => dispatch({type:"clear",undefined})
 })
 
 export default connect(mapStateToProps,mapDispathToProp)(Register);
