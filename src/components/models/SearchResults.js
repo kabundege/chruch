@@ -7,7 +7,7 @@ const getData = (data,type,searchContent) =>{
     let firstMonth = 11;
     let firstYear = 2020;
 
-    const lastDate = new Date().getDay() === 7 ? new Date().getDate() : new Date().getDate() - new Date().getDay();
+    const lastDate = new Date().getDay() === 7 ? new Date().getDate() : new Date().getDate() + 7 - new Date().getDay();
     
     const lastMonth =  () => {
         let result;
@@ -143,7 +143,7 @@ const Search = ({ searchContent,type,data,loading,closer }) => {
                 <span style={{position:"relative",top:"-15%"}}>{type === "paruwasi" ? '🔢' : '👥'}</span>
                 <span>📅 Itariki</span>
                 <span>⛪ rya { window.screen.width > 700 ? 'Mbere' : 1}</span>
-                <span>🏡 rya { window.screen.width > 700 ? 'kabiti' : 2}</span>
+                <span>🏡 rya { window.screen.width > 700 ? 'kabiri' : 2}</span>
             </div>
             {
                 results[0] ? results.map((day,index)=>

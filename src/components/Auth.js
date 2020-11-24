@@ -15,6 +15,7 @@ class Auth extends Component{
 
     handlerChange = data => {
         if(data){
+            console.log(data.length,"===",data)
             data.length >= 14 ?
             this.setState({ error: 'imibare 9 yuzuye' }):
             this.setState({ phone: data,error:"" })

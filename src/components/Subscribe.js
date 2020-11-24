@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import '../scss/components/auth.scss';
+import Logout from '../helpers/logout';
 import React,{ Component } from 'react';
 import Loader from "react-spinners/BeatLoader";
 import { Book } from '../store/actions/actions';
@@ -75,12 +76,7 @@ class Subscribe extends Component{
                             <button >
                             { loading ? <Loader/> : <> Emeza 👍 </> }
                             </button> :
-                            <header onClick={()=> {
-                                window.localStorage.clear();
-                                window.location.assign('/')
-                            }}>
-                                Ababanza
-                            </header> 
+                            <Logout />
                         }
                     </div>
                 </form>

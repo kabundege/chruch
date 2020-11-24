@@ -1,11 +1,5 @@
 const initState = {
-    userInfo:{
-        role:null,
-        token:null,
-        amazina:null,
-        phonenumber:null,
-        itorero_ryibanze:null,
-    },
+    userInfo:null,
     authError:"",
     signupError:"",
     loading:false,

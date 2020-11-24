@@ -8,7 +8,8 @@ class Register extends Component{
     state = {
         amazina:"",
         itorero_ryibanze:"",
-        subtmitted: false
+        subtmitted: false,
+        phonenumber:localStorage.getItem('phoneNumber')
     }
     handlerchange = e => {
         const { name,value } = e.target;
@@ -18,12 +19,12 @@ class Register extends Component{
     handlerSubmit = e => {
         e.preventDefault()
 
-        const { amazina,itorero_ryibanze } = this.state;
+        const { amazina,itorero_ryibanze,phonenumber } = this.state;
 
         this.setState({ submitted:true })
 
         this.props.Signup({ 
-            phonenumber: localStorage.getItem('phoneNumber'),
+            phonenumber,
             amazina :`${amazina}`.toLowerCase(),
             itorero_ryibanze: `${itorero_ryibanze}`.toLowerCase(),
             role:'Christian'
@@ -51,7 +52,7 @@ class Register extends Component{
     }
 
     render(){
-        const { amazina,itorero_ryibanze } = this.state;
+        const { amazina,itorero_ryibanze,phonenumber } = this.state;
         const { loading,signupError } = this.props.Authdata;
         return(
             <div className="auth">
@@ -69,7 +70,8 @@ class Register extends Component{
                                 value={amazina} 
                                 name="amazina" 
                                 placeholder="Amazina" 
-                                onChange={this.handlerchange}/>
+                                onChange={this.handlerchange} 
+                                required/>
                         </div>
                         <div className="input-field">
                             <span>👥</span>
@@ -78,7 +80,18 @@ class Register extends Component{
                                 value={itorero_ryibanze} 
                                 name="itorero_ryibanze" 
                                 placeholder="Itorero ry'ibanze" 
-                                onChange={this.handlerchange}/>
+                                onChange={this.handlerchange}
+                                required/>
+                        </div>
+                        <div className="input-field">
+                            <span>☎</span>
+                            <input 
+                                type="text" 
+                                value={phonenumber} 
+                                name="phonenumber" 
+                                placeholder="Phone Number" 
+                                onChange={this.handlerchange}
+                                required/>
                         </div>
                         
                         { signupError !== "" && <p id="error">  <i className="fas fa-exclamation-triangle"></i> {signupError} </p>}

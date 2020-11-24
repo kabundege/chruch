@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import '../scss/components/auth.scss';
+import Logout from '../helpers/logout';
 import React,{ Component } from 'react';
 
 class Parrish extends Component{
@@ -13,7 +14,7 @@ class Parrish extends Component{
         this.setState({ [name]:value });
     }
     render(){
-        const { paruwasi,amazina,service,date } = this.props.Book.Booking;
+        const { paruwasi,amazina,service,date } = this.props.Book;
         return(
             <div className="auth">
                 <section className="bg"></section>
@@ -48,12 +49,7 @@ class Parrish extends Component{
                             <span style={{margin:"0px 5px"}}>Ku cyumweru Tariki <strong>{date}</strong></span>
                         </div>
                         </div>
-                        <button className="end" style={{margin:"3% 0"}} onClick={()=>{
-                                localStorage.clear();
-                                window.location.assign('/')
-                             }}>
-                            Sohoka <i className="fas fa-sign-out-alt"></i>
-                        </button>
+                        <Logout/>
                     </div>
                 </form>
             </div>
@@ -62,7 +58,7 @@ class Parrish extends Component{
 }
 
 const mapStateToProps = state => ({
-    Book: state.book
+    Book: state.book.Booking
 })
 
 export default connect(mapStateToProps)(Parrish);

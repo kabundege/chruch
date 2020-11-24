@@ -1,0 +1,37 @@
+.logout{
+    display: flex;
+    padding: 1px;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    border:1px solid white;
+    color:white;
+    margin:3% 0;
+    &:hover{
+        box-shadow: 0px -0px 5px 0px lightgrey;
+    }
+    @media screen and (max-width:700px) {
+        border:1px solid #333;
+        color:#333;
+        background: transparent;
+    }
+    div{
+        padding: 8px 10px;
+        font-size: 15px;
+        border-radius: 50%;
+        i{ 
+            color:red;
+            &:hover{
+                color: #333;
+            }
+         }
+        &:first-child{
+            background: whitesmoke;
+            @media screen and (max-width:700px) {
+                background: #333;
+            }
+        }
+    }
+
+}
