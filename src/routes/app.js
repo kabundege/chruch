@@ -13,7 +13,7 @@ import Subscribe from '../components/Subscribe';
 
 const routes = () => {
   const address = window.location.pathname;
-  if(address !== "/" && address !== '/signup' && localStorage.getItem("token") === null){
+  if(address !== "/" && address !== '/signup' && address !== '/notfound' && localStorage.getItem("token") === null){
     return window.location.assign('/')
   }
   return (
@@ -22,7 +22,7 @@ const routes = () => {
         <Network/>
         <Add />
         <Switch>
-            <Route path='/' exact component={Login}/>
+            <Route path='/' component={Login}/>
             <Route path='/dash' exact component={Dash}/> 
             <Route path='/owner' exact component={Owner}/>
             <Route path='/final' exact component={Final}/>
